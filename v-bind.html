@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas: v-bind </title>
+</head>
+<body>
+
+     <div id="bind">
+      
+        <h2> Acesse o site abaixo</h2>
+        <a v-bind:href="url">Youtube</a>
+
+        <p :[arg]="value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo accusamus ipsam quaerat facere iusto! Animi culpa voluptatum nesciunt accusantium, doloremque eos atque eveniet ipsam maiores magnam minima recusandae, repellat fuga.</p>
+        
+
+        
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <script>
+
+        let app = new Vue({
+            el: '#bind',
+            data: {
+                url: 'https://www.youtube.com/',
+                arg: 'title',
+                value: 'Parágrafo de exemplo'
+              
+
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

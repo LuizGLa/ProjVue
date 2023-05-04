@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades armazedas</title>
+</head>
+<body>
+
+     <div id="computed">
+
+       <h2>Nome: {{ person.firstName }}</h2>
+       <h2>Nome completo: {{fullName}}</h2>
+
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+    <script>
+
+        let app = new Vue({
+            el: '#computed',
+            data: {
+                person: {
+                    firstName: 'Luiz',
+                    lastName: 'Gustavo'
+                }
+              
+            },
+            methods: {
+              
+
+            },
+            computed: {
+                fullName: function() {
+
+                    return `${this.person.firstName} ${this.person.lastName}`
+                }
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

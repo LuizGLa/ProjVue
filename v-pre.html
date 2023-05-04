@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas: v-pre </title>
+</head>
+<body>
+
+     <div id="pre">
+       
+        <h2 v-pre>{{message}}</h2>
+
+        <p v-on:click="showAlert" v-pre>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat mollitia blanditiis recusandae expedita architecto voluptatibus. Ab ad veritatis quos dignissimos! Ipsa excepturi maiores accusamus vitae facere inventore facilis repellendus nisi?
+        </p>
+
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <script>
+           
+        let app = new Vue({
+            el: '#pre',
+            data: {
+               message: 'Luiz Gustavo'
+              
+            },
+            methods: {
+                showAlert() {
+                    alert('Hello Luiz')
+                }
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

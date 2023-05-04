@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas: v-slot </title>
+</head>
+<body>
+
+     <div id="slot">
+       
+        <text-component>
+            <template v-slot:header>
+
+                <h2>Cabeçalho do site</h2>
+
+            </template>
+        Luiz Gustavo
+
+        </text-component>
+        <text-component>
+
+        Paula Lima
+          
+
+        </text-component>
+        <text-component>
+
+            
+        Filomena
+
+        </text-component>
+      
+
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <script>
+           
+       Vue.component('text-component', {
+        template: `
+        <div>
+            <header>
+
+                <slot name="header"></slot>
+            
+            </header>
+            <p>
+                  <slot></slot>    
+            </p>
+            
+        </div>
+        `
+       })
+
+        let app = new Vue({
+            el: '#slot',
+            data: {
+               
+              
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas: v-on </title>
+</head>
+<body>
+
+     <div id="on">
+
+        <p v-on:click="reverseMessage">{{ message }}</p>
+        <p v-on:[eventname]="reverseMessage">{{ message }}</p>
+
+        <hr>
+
+        <input type="text" placeholder="Filtra pessoas" v-on:keyup="filterPersons">
+
+        <ul>
+            <li v-for="person in personsFiltred">{{person}}</li>
+        </ul>
+
+
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <script>
+
+        let app = new Vue({
+            el: '#on',
+            data: {
+               message: 'Luiz Gustavo',
+               eventname: 'click',
+               persons: ['luiz','gustavo','filo','newton','ilda','paula'],
+               personsFiltred: []
+              
+            },
+            methods: {
+                reverseMessage(){
+                    this.message = this.message.split('').reverse().join('')
+                },
+                filterPersons(event) {
+                    this.personsFiltred = this.persons.filter(name => {
+                        return name.toUpperCase().includes(event.target.value.toUpperCase())
+                    })
+
+                }
+            },
+            created() {
+                this.personsFiltred = this.persons
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretivas: v-show </title>
+</head>
+<body>
+
+     <div id="show">
+        <h1 v-show="isLogged"> V-show Seja bem-vindo</h1>
+        <h1 v-if="isLogged"> V-if Seja bem-vindo</h1>
+
+        
+     </div>
+
+
+
+     <script src="/Primeiros passos/vue.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <script>
+
+        let app = new Vue({
+            el: '#show',
+            data: {
+                isLogged: true
+
+
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
